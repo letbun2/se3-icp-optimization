@@ -1,11 +1,11 @@
 # se3-icp-optimization
 A minimalistic Python implementation of SO(3)/SE(3) Lie group operations and Gauss-Newton point-to-point ICP algorithm using NumPy.
 
-这是一个极其精简且易于理解的 3D 计算机视觉/机器人位姿估计教学示例。项目在不依赖任何复杂优化库（如 Ceres、GTSAM）的情况下，纯手工使用 **NumPy** 实现了三维刚体运动的李群李代数底层数学，并应用左扰动高斯-牛顿法完成了已知对应关系的点到点 ICP（Iterative Closest Point）配准。
+这是一个简易的 3D 计算机视觉/机器人位姿估计示例。项目在不依赖任何复杂优化库（如 Ceres、GTSAM）的情况下，纯手工使用 **NumPy** 实现了三维刚体运动的李群李代数底层数学，并应用左扰动高斯-牛顿法完成了已知对应关系的点到点 ICP（Iterative Closest Point）配准。
 
 ## 核心特性 (Key Features)
 
-- **纯 NumPy 实现 (Pure NumPy Implementation)**：零额外外部依赖，代码逻辑清晰，适合作为 SLAM 进阶与几何深度学习的基础练习。
+- **纯 NumPy 实现 (Pure NumPy Implementation)**：零额外外部依赖，手写基础模块，为深入学习SLAM做准备。
 - **完整的李群李代数映射 (Lie Group & Lie Algebra Operations)**：
   - $\text{SO}(3)$ 与 $\text{SE}(3)$ 之间的指数映射 (`exp`) 与对数映射 (`log`)。
   - 使用罗德里格斯公式（Rodrigues' formula）及针对小角度数值稳定的泰勒展开。
@@ -58,7 +58,7 @@ $$
 
 ## 使用方法 (Usage)
 
-你可以直接运行脚本来观察 ICP 的收敛过程以及最终与真实位姿的残差比对：
+可以直接运行脚本来观察 ICP 的收敛过程以及最终与真实位姿的残差比对：
 
 ```bash
 python main.py --iters 30 --points 80 --noise 0.003
